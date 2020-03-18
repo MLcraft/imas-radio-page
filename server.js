@@ -13,5 +13,5 @@ app.get("/metadata", db.getMetadata);
 app.get("/time", db.getTime);
 
 app.listen(process.env.PORT, () => {
-    console.log("Server running on port 80");
+    console.log("Server running on port " + process.env.PORT.toString());
 });
