@@ -13,8 +13,8 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     i = null
 
-    while (playedSongs.length > max/2){
-      playedSongs.shift()
+    while (playedSongs.length > max / 2) {
+        playedSongs.shift()
     }
 
 
@@ -23,8 +23,8 @@ function getRandomIntInclusive(min, max) {
 
 
 
-    while (playedSongs.includes(i)){
-      i = Math.floor(Math.random()*(max-min+1))+min;
+    while (playedSongs.includes(i)) {
+        i = Math.floor(Math.random() * (max - min + 1)) + min;
     }
     return i
 
@@ -35,5 +35,5 @@ function getRandomIntInclusive(min, max) {
 }
 
 module.exports = {
-  getRandomIntInclusive,
+    getRandomIntInclusive,
 }
