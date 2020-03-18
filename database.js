@@ -1,11 +1,10 @@
 var Client = require('pg-native')
 
 var client = new Client({
-    connectionString: 'postgres://wsnqqrlcgfmlis:2a874ffe938a680aa2f6c25d5acdac095ab8caafca16442ee6e7c93ac01f6f43@ec2-50-17-178-87.compute-1.amazonaws.com:5432/d7d6plkt7pbqc1',
     ssl: true,
 });
 
-client.connectSync();
+client.connectSync('postgres://wsnqqrlcgfmlis:2a874ffe938a680aa2f6c25d5acdac095ab8caafca16442ee6e7c93ac01f6f43@ec2-50-17-178-87.compute-1.amazonaws.com:5432/d7d6plkt7pbqc1');
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
