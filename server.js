@@ -1,5 +1,5 @@
 var express = require("express");
-
+const db = require('./database');
 var app = express();
 
 app.use(function(req, res, next) {
@@ -8,10 +8,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get("/current", (req, res, next) => {
-    res.json({"url": "https://a.tumblr.com/tumblr_peyjdq2K291w8huxoo1.mp3", "timestamp": 120});
-});
+app.get("/url", db.getUrl);
+
+app.get("/time", db.getTime);
 
 app.listen(3000, () => {
- console.log("Server running on port 3000");
+    console.log("Server running on port 3000");
 });
