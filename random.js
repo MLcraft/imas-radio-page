@@ -1,17 +1,17 @@
 var playedSongs = [];
 function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    i = 0
+    lmin = Math.ceil(min);
+    lmax = Math.floor(max);
+    var i = Math.floor(Math.random() * (lmax - lmin + 1)) + lmin;
 
-    while (playedSongs.length > max / 2) {
+    while (playedSongs.length > lmax / 2) {
         playedSongs.shift()
     }
-    while (playedSongs.includes(i) | i == 0) {
-        i = Math.floor(Math.random() * (max - min + 1)) + min;
+    while (playedSongs.includes(i)) {
+        i = Math.floor(Math.random() * (lmax - lmin + 1)) + lmin;
     }
-    return i
     playedSongs.push();
+    return i
 }
 
 module.exports = {
