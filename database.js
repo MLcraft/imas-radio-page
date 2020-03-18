@@ -1,4 +1,5 @@
 var Client = require('pg-native')
+var rand = require('./random');
 
 var client = new Client({
     ssl: true,
@@ -6,16 +7,10 @@ var client = new Client({
 
 client.connectSync('postgres://wsnqqrlcgfmlis:2a874ffe938a680aa2f6c25d5acdac095ab8caafca16442ee6e7c93ac01f6f43@ec2-50-17-178-87.compute-1.amazonaws.com:5432/d7d6plkt7pbqc1');
 
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 const getCurrent = () => {
     var total = 0;
     total = parseInt(client.querySync("SELECT COUNT(*) FROM songs")[0]['count']);
-    var randID = getRandomIntInclusive(1, total);
+    var randID = rand.getRandomIntInclusive(1, total);
       
     console.log(randID);
     var songs = client.querySync("SELECT * FROM songs WHERE id=" + randID.toString());
