@@ -8,11 +8,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get("/url", db.getUrl);
+app.get("/metadata", db.getMetadata);
 
 app.get("/time", db.getTime);
-
-app.get("/name", db.getName);
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");

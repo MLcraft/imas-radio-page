@@ -1,7 +1,6 @@
 var Client = require('pg-native')
 
 var client = new Client();
-const bufferTime = 3;
 
 client.connectSync("user=me host=localhost dbname=api password=password port=5432");
 
@@ -25,8 +24,9 @@ function timer() {
   setTimeout(function () {
       time++;
       // console.log(time);
-      if (time >= songTotalTime + bufferTime) {
+      if (time >= songTotalTime) {
         current = getCurrent();
+        songTotalTime = current['length'];
         time = 0;
       }
       timer();
@@ -36,16 +36,12 @@ function timer() {
 var current = getCurrent();
 var time = 0;
 var songTotalTime = current['length'];
-console.log(songTotalTime);
+// console.log(songTotalTime);
 
 timer();
 
-const getName = (request, response) => {
-  response.status(200).json({'name': current['name']});
-}
-
-const getUrl = (request, response) => {
-    response.status(200).json({'url': current['url']});
+const getMetadata = (request, response) => {
+    response.status(200).json({'name': current['name'], 'url': current['url']});
 }
 
 const getTime = (request, response) => {
@@ -53,7 +49,6 @@ const getTime = (request, response) => {
 }
 
 module.exports = {
-    getUrl,
+    getMetadata,
     getTime,
-    getName
 }
