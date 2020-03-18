@@ -23,8 +23,8 @@ function getRandomIntInclusive(min, max) {
 
 
 
-    while (!playedSongs.includes(i)){
-      i = Math.floor(Math.random() * (max - min + 1)) + min;
+    while (playedSongs.includes(i)){
+      i = Math.floor(Math.random()*(max-min+1))+min;
     }
     return i
 
