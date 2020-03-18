@@ -38,7 +38,7 @@ var songTotalTime = current['length'];
 timer();
 
 const getMetadata = (request, response) => {
-    response.status(200).json({'name': current['name'], 'url': current['url'], 'artist': current['artist'], 'album': current['album']});
+    response.status(200).json({'name': current['name'], 'url': current['url'], 'artist': current['artist'], 'album': current['album'], 'cover': current['cover']});
 }
 
 const getTime = (request, response) => {
