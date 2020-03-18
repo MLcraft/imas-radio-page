@@ -1,8 +1,11 @@
 var Client = require('pg-native')
 
-var client = new Client();
+var client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+});
 
-client.connectSync("user=me host=localhost dbname=api password=password port=5432");
+client.connectSync();
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
