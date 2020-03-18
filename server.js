@@ -12,6 +12,8 @@ app.get("/url", db.getUrl);
 
 app.get("/time", db.getTime);
 
+app.get("/name", db.getName);
+
 app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
