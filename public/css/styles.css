@@ -1,7 +1,5 @@
-
-
 body {
-    font-family: Arial, Impact, sans-serif;
+    font-family: Trebuchet MS, sans-serif;
     display: block;
       margin-left: 0px;
   }
@@ -145,4 +143,18 @@ body {
   
   .slider {
       margin-top: 40px;
+  }
+
+  footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+
+  .footer {
+    height: 25px;
+    margin: auto;
+    width: 100%;
+    text-align:center;
+    padding:10px;
   }
