@@ -31,15 +31,14 @@ function getSong() {
             cover = result['cover'];
             next = result['next'];
 
-            if (!sound) {
+            if (!sound || sound._src != src) {
                 sound = new Howl({
-                    src: [src],
-                    volume: volume
+                    src: [src]
                 })
             }
+
             nextSound = new Howl({
-                src: [next],
-                volume: volume
+                src: [next]
             })
 
             sound.on("load", function () {
@@ -70,9 +69,6 @@ function playSong() {
                 sound.seek(time);
                 sound.play();
                 sound.on("end", nextSong);
-                if(mute){
-                    sound.volume(0);
-                }
             }
         }
     });
@@ -80,7 +76,6 @@ function playSong() {
 
 function nextSong() {
     sound.unload();
-    nextSound.volume = sound.volume;
     sound = nextSound;
     getSong();
 }

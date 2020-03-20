@@ -23,9 +23,9 @@
                 volume = this.value / 100;
 
                 if(!mute){
-                    sound.volume(volume);
+                    Howler.volume(volume);
                 }else{
-                    sound.volume(0);
+                    Howler.volume(0);
                 }
             });
 
@@ -33,10 +33,10 @@
                 mute  = !mute;
                 backendMute(mute);
                 if(mute){
-                    sound.volume(0);
+                    Howler.volume(0);
                     mutebutton1.src = "https://cdn.discordapp.com/attachments/612474947532488704/689721204046561280/5e71b44a4626f16c08ef029c_465767-200.png";
                 }else{
-                    sound.volume(document.getElementById("volume").value/100);
+                    Howler.volume(document.getElementById("volume").value/100);
                     mutebutton1.src = "https://cdn.discordapp.com/attachments/612474947532488704/689998614936027242/unmuted_v2.png";
                 }
             });
