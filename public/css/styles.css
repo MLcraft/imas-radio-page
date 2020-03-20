@@ -1,0 +1,148 @@
+
+
+body {
+    font-family: Arial, Impact, sans-serif;
+    display: block;
+      margin-left: 0px;
+  }
+  
+  .heading {
+      margin-top: 30px;
+      padding-left: 40px;
+      font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, sans-serif;
+  }
+  h1 {
+      font-size: 38px;
+      line-height: 44px;
+      margin-top: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+  .div-block {
+      padding-right: 20px;
+      text-align: right;
+  }
+  div {
+      display: block;
+  }
+  img {
+      max-width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+  }
+  
+  input {
+      max-width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+  }
+  
+  .image {
+      margin: -93px 0px 0px;
+      padding-right: 0px;
+      padding-left: 0px;
+      text-align: right;
+  }
+  
+  .nowplayingtitle {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      margin-left: 0px;
+      font-size: 30px;
+      line-height: 30px;
+  }
+  
+  .nowplayingsinger {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 24px;
+  }
+  
+  .nowplayingalbum {
+      overflow: hidden;
+      max-width: 400px;
+      margin-top: 15px;
+      font-size: 20px;
+  }
+  
+  .image-2 {
+      height: auto;
+      width: 500px;
+      max-height: 500px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 0px;
+      margin-left: 40px;
+      padding-top: 0px;
+      padding-left: 0px;
+  }
+  
+  .image-4 {
+      height: auto;
+      width: 500px;
+      max-height: 500px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 0px;
+      margin-left: 40px;
+      padding-top: 0px;
+      padding-left: 0px;
+  }
+  .div-block-2 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+  }
+  
+  .loadingimg {
+    margin-top: -500px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+  .playbutton {
+      margin-top: -500px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+  }
+  
+  .div-block-3 {
+      margin-top: -500px;
+      margin-bottom: 0px;
+      margin-left: 617px;
+  }
+  
+  .paragraph {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      margin-left: 0px;
+      font-size: 30px;
+      line-height: 30px;
+  }
+  
+  .paragraph-2 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 24px;
+  }
+  
+  
+  p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      max-width: 400px;
+  }
+  
+  .paragraph-3 {
+      margin-top: 15px;
+      font-size: 20px;
+  }
+  
+  .image-3 {
+      margin-top: 40px;
+      margin-left: -10px;
+  }
+  
+  .slider {
+      margin-top: 40px;
+  }

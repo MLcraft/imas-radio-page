@@ -1,0 +1,85 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        $(document).ready(function () {
+            var mute = false;
+            var started = false;
+            const mutebutton1 = document.getElementById("mutebutton");
+            getSong();
+
+            $('#play').click(function () {
+                started = true;
+                backstarted();
+                getSong();
+                this.style.display ="none";
+            });
+            $("#volume").on("input", function () {
+                volume = this.value / 100;
+
+                if(!mute){
+                    sound.volume(volume);
+                }else{
+                    sound.volume(0);
+                }
+            });
+
+            $('.image-3').click(function () {
+                mute  = !mute;
+                backendMute(mute);
+                if(mute){
+                    sound.volume(0);
+                    mutebutton1.src = "https://cdn.discordapp.com/attachments/612474947532488704/689721204046561280/5e71b44a4626f16c08ef029c_465767-200.png";
+                }else{
+                    sound.volume(document.getElementById("volume").value/100);
+                    mutebutton1.src = "https://cdn.discordapp.com/attachments/612474947532488704/689998614936027242/unmuted_v2.png";
+                }
+            });
+        });
+    </script>
+    <title>IM@S RADIO</title>
+    <meta name="description" content="IM@S RADIO">
+    <meta name="author" content="Izumi21">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+
+
+</head>
+
+<body>
+    <header>
+
+
+        
+        <h1 class="heading">IDOLM@STER RADIO</h1>
+        <div class="div-block">
+            <img src="https://cdn.discordapp.com/attachments/612474947532488704/689721093111545872/5e71acea4626f18d6eeee4f3_PROJECTIMAS.png" width="203" alt="" class="image">
+        </div>
+    </header>
+    <div class="section">
+        <div class="div-block-2">
+            <img src="https://www.project-imas.com/w/images/b/bc/Tachibana_Loading_3.gif" alt="" id="album-cover" class="image-2">
+            <div class="playbutton">
+                <img src="https://cdn.discordapp.com/attachments/612474947532488704/690309979206451218/play_button_final.png" alt="" id="play" class="image-4">
+            </div>
+            <div class="loadingimg">
+                <img src="https://www.project-imas.com/w/images/b/bc/Tachibana_Loading_3.gif" alt="" id="loading" class="image-4">
+            </div>
+        </div>
+    </div>
+    <div class="div-block-3">
+        <h1 class="nowplayingtext">Now Playing</h1>
+        <p class="nowplayingtitle" id="song-title">Song</p>
+        <p class="nowplayingsinger" id="song-artist">Singer</p>
+        <p class="nowplayingalbum" id="song-album">Album</p>
+        <img src="https://cdn.discordapp.com/attachments/612474947532488704/689998614936027242/unmuted_v2.png" width="41" alt="" id="mutebutton" class="image-3">
+        <input type="range" min="0" max="100" value="50" class="slider" id="volume">
+    </div>
+</body>
+</html>
