@@ -1,22 +1,24 @@
-// var Client = require('pg-native')
-var loader = require('csv-load-sync');
+var Client = require('pg-native')
 var rand = require('./random');
 
-// var client = new Client({
-// });
+var client = new Client({
+});
 
-// client.connectSync('postgres://postgres:Ilovemomoko20@imas-radio-db.clre2ilzrstm.us-west-2.rds.amazonaws.com:5432/api');
+const port = process.env.PORT;
+const user = process.env.PGUSER;
+const password = process.env.PGPASSWORD;
+const server = process.env.PGSERVER;
+
+client.connectSync(`postgres://${user}:${password}@${server}:${port}`);
 
 const getCurrent = () => {
-    songs = loader("songs.csv");
     var total = 0;
-    total = songs.length;
+    total = parseInt(client.querySync("SELECT COUNT(*) FROM songs")[0]['count']);
     var randID = rand.getRandomIntInclusive(1, total);
 
     // console.log(randID);
-    // console.log(songs[randID]);
-    // var songs = client.querySync("SELECT * FROM songs WHERE id=" + randID.toString());
-    return songs[randID];
+    var songs = client.querySync("SELECT * FROM songs WHERE id=" + randID.toString());
+    return songs[0];
 }
 
 function timer() {

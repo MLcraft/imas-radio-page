@@ -1,4 +1,4 @@
-# imas-radio
+# imas-radio-backend
 
 Use `node server.js` to start the server
 

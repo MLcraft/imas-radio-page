@@ -18,6 +18,6 @@
   "homepage": "https://github.com/MLcraft/imas-radio-backend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "csv-load-sync": "1.0.0"
+    "pg-native": "^3.0.0"
   }
 }
